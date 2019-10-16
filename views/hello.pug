@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  if name
+    h3 Welcome #{name}
+  else
+    form(action='/hello', method='post')
+      .form-inline
+        input(class='form-control', placeholder='Enter your name :)', type='text', name='username')
+        input(class='form-control', type='submit')
+      button(class='btn btn-primary', type='submit') Submit

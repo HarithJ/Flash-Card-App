@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  div(class=['flash-card', 'w-75'])
+    .body
+      .front
+        h3= question
+        if hint
+          p
+           i hint: #{hint}
+        if options
+          ul
+            each option in options
+              li= option
+      .back
+        h3= answer
