@@ -4,8 +4,7 @@ block content
   if name
     h3 Welcome #{name}
   else
-    form(action='/hello', method='post')
+    form(action='/hello', method='post', class='hello-form')
       .form-inline
-        input(class='form-control', placeholder='Enter your name :)', type='text', name='username')
-        input(class='form-control', type='submit')
-      button(class='btn btn-primary', type='submit') Submit
+        input(class='form-control username', placeholder='Enter your name :)', type='text', name='username', autocomplete="off")
+        input(class=['form-control', 'play-button'], type='submit', value='Begin!')
