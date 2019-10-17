@@ -17,10 +17,16 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // const { side } = req.query; // query string eg ?side=question
 
+  const name = req.cookies.name;
+  if (!name) {
+    return res.redirect('/hello')
+  }
+
   const card = cards[req.params.id];
 
   templateData = card;
-  console.log(templateData);
+  templateData.name = name
+
   res.render('card', templateData);
 });
 
