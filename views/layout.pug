@@ -3,7 +3,12 @@ html(lang="en")
   head
     title Flash Card
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
-    link(rel='stylesheet', href='/styles/main.css', type='text/css')
+
+    if !name
+      link(rel='stylesheet', href='/styles/main.css', type='text/css')
+    else
+      link(rel='stylesheet', href='/styles/cards.css', type='text/css')
+
     link(href="https://fonts.googleapis.com/css?family=Alegreya+SC&display=swap" rel="stylesheet")
   body
     .container

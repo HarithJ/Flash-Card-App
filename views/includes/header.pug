@@ -1,3 +1,14 @@
 header
-    .card1
+  if !name
+    .logo
     h1(class='title') Flash Cards
+
+  if name
+    div(class=['row'])
+      div(class=['col-auto', 'mr-auto'])
+        .logo
+        h1(class='title') Flash Cards
+      div(class=['col-auto', 'ml-auto'])
+        form(action='/', method='post')
+          .form-inline
+            input(class='form-control', type='submit', value='Good Bye')

@@ -1,4 +1,87 @@
+header {
+  margin-top: 12px;
+  font-family: 'Alegreya SC', serif;
+  color: #6B362C;
+}
+
+.logo {
+  box-shadow: -10px 15px black;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background: #6B362C;
+  transform: rotate3d(2, 1, 2, 45deg);
+}
+
+.title {
+  display: inline-block;
+  font-size: 2em;
+  margin-left: 10px;
+}
+
+.logout-btn {
+  background-color: #544941;
+  border-color: #544941;
+}
+
+.logout-btn:hover {
+  background-color: #453C36;
+  border-color: #362F2A;
+}
+
+.logout-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(68, 63, 60, .5);
+}
+
+.logout-btn:active {
+  background-color: #453C36!important;
+  border-color: #362F2A!important;
+}
+
+.logout-btn:focus:active {
+  box-shadow: 0 0 0 0.2rem rgba(68, 63, 60, .5)!important;
+}
+
 .flash-card {
+  margin-top: 10% !important;
+  height: 350px;
+  margin: auto;
+  position: relative;
+}
+
+.flash-card .body {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12);
+}
+
+.flash-card:hover .body {
+  transform: rotateY(180deg);
+}
+
+.flash-card .front, .flash-card .back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 80%
+}
+
+.flash-card .front {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flash-card .back {
+  top: 50%;
+  left: 50%;
+  transform: rotateY(180deg) translate(50%, -50%);
+  text-align: center;
+}
+
+/* .flash-card {
   position: relative;
   height: 300px;
   margin: auto;
@@ -26,4 +109,4 @@
 .flash-card .back {
   background: #fafafa;
   transform: rotateY(180deg);
-}
+} */

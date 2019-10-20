@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
   templateData = card;
   templateData.name = name
 
-  res.render('card', templateData);
+  return res.render('card', templateData);
 });
 
 module.exports = router;

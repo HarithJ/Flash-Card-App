@@ -12,26 +12,26 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const name = req.cookies.name
   if (name) {
-    res.render('index', {name: name});
+    return res.redirect('/card');
   }
   else {
-    res.redirect('/hello');
+    return res.redirect('/hello');
   }
 });
 
 router.post('/', (req, res) => {
   res.clearCookie('name');
-  res.redirect('/hello');
+  return res.redirect('/hello');
 });
 
 
 router.get('/hello', (req, res) => {
   const name = req.cookies.name
   if (name) {
-    res.redirect('/');
+    return res.redirect('/');
   }
   else {
-    res.render('hello');
+    return res.render('hello');
   }
 });
 
@@ -40,7 +40,7 @@ router.post('/hello', (req, res) => {
   res.cookie('name', req.body.username);
 
   // redirect to home page
-  res.redirect('/');
+  return res.redirect('/');
 });
 
 module.exports = router;
